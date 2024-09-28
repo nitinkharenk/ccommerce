@@ -1,12 +1,11 @@
-
 import { NextResponse } from 'next/server';
 
-// Helper function to introduce a delay
+export const dynamic = 'force-dynamic'; // Ensures the API route is dynamic
+
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export async function GET() {
-  // Introduce a 30-second delay
-  await delay(60000); // 30,000 ms = 30 seconds
+  await delay(30000); // 30-second delay
 
   const xmlData = `
     <root>
@@ -21,7 +20,6 @@ export async function GET() {
     </root>
   `;
 
-  // Return the XML response after the delay
   return new NextResponse(xmlData, {
     status: 200,
     headers: {
