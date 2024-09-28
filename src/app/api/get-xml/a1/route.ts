@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'; // Ensures the API route is dynamic
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export async function GET() {
-  await delay(30000); // 30-second delay
+  await delay(10000); // 30-second delay
 
   const xmlData = `
     <root>
